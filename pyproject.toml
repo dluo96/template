@@ -4,11 +4,11 @@ requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "my-package"
-description = "Implementation of DDPM and other diffusion models"
+name = "INSERT PACKAGE NAME HERE"
+description = "INSERT PACKAGE DESCRIPTION HERE"
 readme = "README.md"
 authors = [
-  {name="Daniel Luo and Tom Makkink"},
+  {name="Daniel Luo"},
 ]
 requires-python = "==3.9.16"
 version = "0.0.1"
