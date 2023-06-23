@@ -60,10 +60,6 @@ disable=attribute-defined-outside-init,
         too-many-instance-attributes,
         too-many-locals,
         wrong-import-order,
-        # Daniel: avoid no-value-for-parameter (E1120) error for decorators that change function signature
-        no-value-for-parameter,
-        invalid-name, # Added to avoid error for variable "T" in diffusion
-        redefined-outer-name, # Added to avoid error when using same name "T" in outer scope
 
 [REPORTS]
 
