@@ -1,2 +1,6 @@
-# transformer
-An implementation of the original transformer architecture from the "Attention is all you need" paper
+# Repository Template
+Remember to do the following when you create a new repository from this template:
+- [ ] Update the package name in the (`pyproject.toml`)[pyproject.toml] file.
+- [ ] Update the package description in (`pyproject.toml`)[pyproject.toml] file.
+- [ ] Update the repository description in the GitHub UI.
+- [ ] Update the (`README.md`)[README.md] file.
