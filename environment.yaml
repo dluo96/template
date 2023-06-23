@@ -1,4 +1,4 @@
-name: diffusion-playground
+name: name-conda-env
 channels:
   - defaults
   - conda-forge
