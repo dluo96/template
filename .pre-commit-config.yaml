@@ -32,7 +32,7 @@ repos:
         pass_filenames: false
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.1.0
+    rev: v4.4.0
     hooks:
       - id: check-added-large-files
         name: "Verify no large files have been added (pre-commit)"
@@ -61,6 +61,14 @@ repos:
         args: [--markdown-linebreak-ext=md] # Trailing whitespaces are part of Markdown syntax
       - id: requirements-txt-fixer
         name: "Requirements txt sorting (pre-commit)"
+
+  - repo: https://github.com/compilerla/conventional-pre-commit
+    rev: v2.4.0
+    hooks:
+      - id: conventional-pre-commit
+        name: "Check that commit message follows Conventional Commits specification"
+        stages: [commit-msg]
+        args: [] # optional: list of Conventional Commits types to allow e.g. [feat, fix, ci, chore, test]
 
   - repo: https://github.com/pycqa/pydocstyle
     rev: 6.3.0
