@@ -1,10 +1,10 @@
-default_stages: ["commit", "commit-msg", "push"]
+default_stages: ["commit"]
 default_language_version:
   python: python3
 
 repos:
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: v0.0.269
+    rev: v0.1.4
     hooks:
       - id: ruff
         name: "Linting (ruff)"
@@ -49,7 +49,8 @@ repos:
       - id: debug-statements
         name: "Verify no debugger imports or breakpoint() calls (pre-commit)"
       - id: destroyed-symlinks
-        name: "Check for symlinks that have been converted to regular files (pre-commit)"
+        name:
+          "Check for symlinks that have been converted to regular files (pre-commit)"
       - id: end-of-file-fixer
         name: "Verify files end with a newline (pre-commit)"
       - id: fix-byte-order-marker
@@ -66,9 +67,17 @@ repos:
     rev: v2.4.0
     hooks:
       - id: conventional-pre-commit
-        name: "Check that commit message follows Conventional Commits specification"
+        name: "Conventional commit message (conventional-pre-commit)"
         stages: [commit-msg]
-        args: [] # optional: list of Conventional Commits types to allow e.g. [feat, fix, ci, chore, test]
+        args:
+          ["build", "chore", "ci", "docs", "feat", "fix", "perf", "refactor", "test"]
+
+  - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
+    rev: v2.10.0
+    hooks:
+      - id: pretty-format-toml
+        name: TOML Checker (pretty-format-toml)
+        args: [--autofix]
 
   - repo: https://github.com/pycqa/pydocstyle
     rev: 6.3.0
@@ -93,7 +102,7 @@ repos:
     rev: v3.0.0-alpha.9-for-vscode
     hooks:
       - id: prettier
-        name: "Markdown formatting (prettier)"
+        name: "Check YAML, Markdown, and JSON (prettier)"
         args:
           - --print-width=88
           - --prose-wrap=always
